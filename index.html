@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLOW UP מעלה יוסף — קטלוג הזמנות 2026</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234E8C74'/%3E%3Ccircle cx='32' cy='32' r='13' fill='none' stroke='%23F6E9EB' stroke-width='4'/%3E%3Cpath d='M32 6v7M32 51v7M6 32h7M51 32h7' stroke='%23C68A94' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<style>
+:root {
+  /* ── ירוק מנטה ── */
+  --bg: #F1F7F3;
+  --bg-soft: #E4F0E9;
+  --bg-card: #FFFFFF;
+  --primary: #4E8C74;
+  --primary-hover: #3E7460;
+  --primary-light: #A6D3BE;
+  --secondary-btn: #DCEDE3;
+  --secondary-btn-hover: #C9E2D4;
+  /* ── ורוד עתיק ── */
+  --accent: #C68A94;
+  --accent-hover: #B4757F;
+  --accent-soft: #F6E9EB;
+  --accent-border: #E4C4C9;
+  /* ── כללי ── */
+  --green: #4E8C74;
+  --danger: #C0392B;
+  --text: #24352C;
+  --text-muted: #6E8279;
+  --border: #CFE3D8;
+  --shadow: 0 2px 12px rgba(78,140,116,0.10);
+  --shadow-md: 0 4px 24px rgba(78,140,116,0.16);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: 'Segoe UI', Arial, 'Noto Sans Hebrew', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  direction: rtl;
+}
+
+/* === SCREENS === */
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* === SCREEN 1 – IDENTIFICATION === */
+.id-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: linear-gradient(135deg, #F1F7F3 0%, #F6EBEC 100%);
+}
+.id-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 40px 40px 36px;
+  max-width: 520px;
+  width: 100%;
+}
+.logo-area {
+  text-align: center;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--border);
+}
+.logo-mark {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: var(--primary);
+  margin-bottom: 2px;
+}
+.logo-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.3px;
+}
+.logo-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+.logo-area .region-badge {
+  display: inline-block;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  border-radius: 20px;
+  padding: 4px 16px;
+  font-size: 0.82rem;
+  color: var(--accent-hover);
+  margin-top: 10px;
+}
+.id-card h2 {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.form-group input {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  direction: rtl;
+  transition: border-color 0.2s;
+  color: var(--text);
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(166,211,190,0.35);
+}
+.form-group input.invalid { border-color: var(--danger); }
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { opacity: 0.6; cursor: wait; }
+.btn-secondary {
+  background: var(--secondary-btn);
+  color: var(--primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-secondary:hover { background: var(--secondary-btn-hover); }
+.btn-tertiary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-tertiary:hover { background: var(--accent-hover); }
+.btn-full { width: 100%; justify-content: center; margin-top: 8px; }
+
+/* === SCREEN 2 – INSTRUCTIONS === */
+.instructions-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px 80px;
+  background: linear-gradient(135deg, #F1F7F3 0%, #F6EBEC 100%);
+}
+.instructions-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 40px;
+  max-width: 680px;
+  width: 100%;
+}
+.instructions-card h2 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border);
+}
+.instructions-body {
+  line-height: 1.8;
+  color: var(--text);
+  font-size: 0.97rem;
+}
+.instructions-body p { margin-bottom: 12px; }
+.instructions-body strong { color: var(--primary); }
+.instructions-body ul, .instructions-body ol {
+  padding-right: 24px;
+  margin: 10px 0 16px;
+}
+.instructions-body li { margin-bottom: 8px; }
+.budget-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #74AE96 100%);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  text-align: center;
+  margin: 24px 0;
+}
+.budget-hero .budget-amount {
+  font-size: 2rem;
+  font-weight: 800;
+  display: block;
+}
+.budget-hero .budget-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+.gift-note {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  margin: 18px 0 4px;
+  font-size: 0.92rem;
+  color: var(--accent-hover);
+  text-align: center;
+}
+.btn-row {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+/* === SCREEN 3 – CATALOG === */
+#screen-3 { display: none; }
+#screen-3.active { display: flex; flex-direction: column; min-height: 100vh; }
+.catalog-header {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.catalog-header .studio-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.catalog-header .budget-pill {
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 0.85rem;
+}
+.sticky-catalog-top {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.total-bar {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.total-bar .t-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+.total-bar .t-item .t-label { color: var(--text-muted); }
+.total-bar .t-item .t-value {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--primary);
+}
+.total-bar .t-item.over-budget .t-value { color: var(--danger); }
+.total-bar .t-item.over-budget .t-label::after { content: ' ⚠️'; }
+.total-progress {
+  flex: 1;
+  min-width: 120px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.total-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+.total-progress-fill.over { background: linear-gradient(90deg, var(--accent), var(--danger)); }
+
+/* Tabs */
+.tab-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 12px;
+  gap: 2px;
+}
+.tab-nav::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex-shrink: 0;
+  padding: 12px 18px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  position: relative;
+}
+.tab-btn:hover { color: var(--primary); }
+.tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+.tab-btn .tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Product Grid */
+.tab-panel { display: none; padding: 20px 16px; }
+.tab-panel.active { display: block; }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.product-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.product-card.in-cart { border-color: var(--primary-light); }
+.product-img-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--bg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.size-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.product-info {
+  padding: 12px 14px 4px;
+  flex: 1;
+}
+.product-codes {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.product-id-badge {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.product-sku {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+.product-desc {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.product-color {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.product-note {
+  font-size: 0.74rem;
+  color: var(--accent-hover);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  display: inline-block;
+  margin-bottom: 7px;
+}
+.product-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* Quantity Controls */
+.product-actions {
+  padding: 10px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.qty-btn {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  transition: all 0.15s;
+}
+.qty-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.qty-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.qty-btn:disabled:hover { background: #fff; color: var(--primary); border-color: var(--border); }
+.qty-display {
+  min-width: 36px;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.variant-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 0.76rem;
+  color: var(--accent-hover);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.variant-tag:hover { background: #EFDADD; }
+
+/* Catalog Action Bar */
+.catalog-action-bar {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+/* === SCREEN 4 – SUMMARY === */
+#screen-4 { display: none; }
+#screen-4.active { display: block; min-height: 100vh; }
+.summary-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+.summary-wrap h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+.summary-identity-box {
+  background: #fff;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.summary-identity-box .si-item { font-size: 0.88rem; }
+.summary-identity-box .si-label { color: var(--text-muted); font-size: 0.78rem; }
+.summary-identity-box .si-value { font-weight: 600; margin-top: 2px; }
+.summary-table-wrap { overflow-x: auto; }
+table.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+table.summary-table th {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: right;
+}
+table.summary-table td {
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+table.summary-table tr:last-child td { border-bottom: none; }
+table.summary-table tr:hover td { background: #F7FBF8; }
+.summary-total-row td {
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: var(--bg-soft) !important;
+}
+.summary-balance-row td {
+  color: var(--danger);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.summary-gift-row td {
+  background: var(--accent-soft) !important;
+  color: var(--accent-hover);
+}
+.summary-gift-row td strong { color: var(--accent-hover); }
+.no-items-notice {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+.summary-footer-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.btn-lg { padding: 14px 36px; font-size: 1.05rem; }
+.success-box {
+  text-align: center;
+  padding: 48px 20px;
+  background: #fff;
+  border-radius: var(--radius);
+  border: 2px solid var(--primary);
+  max-width: 500px;
+  margin: 60px auto;
+}
+.success-box .success-icon { font-size: 3rem; margin-bottom: 16px; }
+.success-box h3 { color: var(--primary); font-size: 1.3rem; margin-bottom: 8px; }
+.success-box p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* === MODAL === */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(36,53,44,0.65);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open { display: flex; }
+.modal-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 48px rgba(0,0,0,0.25);
+  padding: 28px 28px 24px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  line-height: 1;
+  padding: 4px;
+}
+.modal-close:hover { color: var(--text); }
+.modal-product-preview {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.modal-product-preview img {
+  width: 90px;
+  height: 70px;
+  object-fit: contain;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+.modal-product-preview .mpd { flex: 1; }
+.modal-product-preview .mpd-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+}
+.modal-product-preview .mpd-id {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.modal-product-preview .mpd-price {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-top: 6px;
+}
+.modal-section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.sizes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.size-option {
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.1s, background 0.15s;
+  text-align: center;
+  padding: 18px 8px 14px;
+  background: #fff;
+}
+.size-option:hover { border-color: var(--primary-light); transform: scale(1.02); }
+.size-option.selected {
+  border-color: var(--primary);
+  background: var(--bg-soft);
+  box-shadow: 0 0 0 2px rgba(78,140,116,0.18);
+}
+.size-option .size-circle {
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: 2px solid var(--primary-light);
+  margin: 0 auto 10px;
+}
+.size-option.selected .size-circle { background: var(--primary-light); border-color: var(--primary); }
+.size-option .size-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.size-option .size-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .id-card { padding: 28px 20px 24px; }
+  .form-row { grid-template-columns: 1fr; }
+  .instructions-card { padding: 24px 20px; }
+  .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .total-bar { padding: 8px 16px; gap: 12px; }
+  .catalog-action-bar { padding: 12px 16px; }
+  .btn-row { flex-direction: column-reverse; }
+  .summary-footer-btns { flex-direction: column-reverse; }
+  .modal-card { padding: 20px 16px; }
+  .modal-product-preview { flex-direction: column; }
+  .modal-product-preview img { width: 100%; height: 160px; }
+
+  /* Summary table → cards on mobile */
+  .summary-table-wrap { overflow-x: visible; }
+  table.summary-table { display: block; box-shadow: none; background: transparent; }
+  table.summary-table thead { display: none; }
+  table.summary-table tbody { display: block; }
+  table.summary-table tr {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 12px 14px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  table.summary-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--bg);
+    padding: 5px 0;
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+  table.summary-table td:last-child { border-bottom: none; }
+  table.summary-table td[data-label]::before {
+    content: attr(data-label) ":";
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    min-width: 75px;
+    flex-shrink: 0;
+  }
+  table.summary-table td[data-label="תמונה"] { justify-content: center; padding: 8px 0; }
+  table.summary-table td[data-label="תמונה"]::before { display: none; }
+  .summary-total-row { background: var(--bg-soft) !important; }
+  .summary-total-row td[colspan="5"],
+  .summary-balance-row td[colspan="5"] { display: none; }
+  .summary-total-row td,
+  .summary-balance-row td { font-size: 0.9rem; padding: 6px 0; text-align: right !important; }
+  .summary-identity-box { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 400px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====== SCREEN 1: IDENTIFICATION ====== -->
+<div id="screen-1" class="screen active">
+  <div class="id-wrap">
+    <div class="id-card">
+      <div class="logo-area">
+        <div class="logo-mark">GLOW UP</div>
+        <div class="logo-title">מעלה יוסף 2026</div>
+        <div class="logo-subtitle">מועצה אזורית מעלה יוסף — גליל מערבי</div>
+        <div class="region-badge">קטלוג רענון סטודיו / קליניקה</div>
+      </div>
+      <h2>פרטי הסטודיו / קליניקה</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-studio">שם הסטודיו / קליניקה *</label>
+          <input type="text" id="f-studio" placeholder="שם העסק שלכם">
+        </div>
+        <div class="form-group">
+          <label for="f-contact">שם איש קשר *</label>
+          <input type="text" id="f-contact" placeholder="שם פרטי ומשפחה">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="f-phone">מס׳ נייד *</label>
+        <input type="tel" id="f-phone" placeholder="05X-XXXXXXX">
+      </div>
+      <div class="form-group">
+        <label for="f-email">כתובת אי-מייל *</label>
+        <input type="email" id="f-email" placeholder="your@email.com">
+      </div>
+      <button class="btn-primary btn-full" onclick="goToInstructions()">המשך להוראות ←</button>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SCREEN 2: INSTRUCTIONS ====== -->
+<div id="screen-2" class="screen">
+  <div class="instructions-wrap">
+    <div class="instructions-card">
+      <h2>הוראות הגשת ההזמנה</h2>
+      <div class="budget-hero">
+        <span class="budget-amount">₪9,500</span>
+        <span class="budget-label">תקציב לרשותכם לרענון הסטודיו / קליניקה</span>
+      </div>
+      <div style="background:#fff3cd;border:2px solid #d4a017;border-radius:10px;padding:14px 20px;margin-bottom:20px;text-align:center;">
+        <div style="font-size:1.1rem;font-weight:800;color:#7a4f00;">⚠️ שימו לב — עלות הובלה והרכבה</div>
+        <div style="font-size:1rem;font-weight:700;color:#c0392b;margin-top:6px;">₪500 לכל הזמנה</div>
+        <div style="font-size:0.88rem;color:#5a3e00;margin-top:4px;">עלות זו אינה כלולה בתקציב — יש להוסיפה לסכום הכולל</div>
+      </div>
+      <div class="instructions-body" id="instructions-text">
+        <p>ברוכים הבאים לקטלוג <strong>GLOW UP</strong> — רענון סטודיו וקליניקות במועצה אזורית מעלה יוסף.</p>
+        <p>כל סטודיו / קליניקה זכאי לתקציב של <strong>₪9,500</strong> לבחירת פריטים מהקטלוג הבא.</p>
+        <ol>
+          <li>עברו על הקטגוריות בטאבים ובחרו את הפריטים הרצויים.</li>
+          <li>הגדירו כמות לכל פריט באמצעות כפתורי + / −.</li>
+          <li>שולחנות האירוח פנים דורשים בחירת קוטר — ייפתח חלון בחירה בעת ההוספה.</li>
+          <li>עקבו אחר הסכום בסרגל העליון — סה"כ ההזמנה ויתרת התקציב.</li>
+          <li>בסיום, לחצו על <strong>"לסיכום ההזמנה"</strong> ובדקו את הבחירות שלכם.</li>
+          <li>לחצו <strong>"שלח הזמנה"</strong> — תקבלו סיכום במייל ויורד קובץ Excel.</li>
+        </ol>
+        <p><strong>שימו לב:</strong> אין חובה לנצל את מלוא התקציב. ניתן להזמין כמה פריטים שתרצו, כל עוד סכום ההזמנה אינו עולה על ₪9,500. <br>אם סכום ההזמנה עולה על ₪9,500, ההפרש ייחשב כיתרה לתשלום עצמי.</p>
+        <div class="gift-note">🎁 לכל הזמנה מצורפת מתנה מאיתנו — 3 ואזות ו-3 שרשראות חרוזי עץ לנוי.</div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-secondary" onclick="showScreen(1)">← חזור</button>
+        <button class="btn-primary" onclick="showScreen(3)">המשך לקטלוג ←</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SCREEN 3: CATALOG ====== -->
+<div id="screen-3" class="screen">
+  <div class="catalog-header">
+    <div class="studio-name" id="display-studio">קטלוג GLOW UP</div>
+    <div class="budget-pill">תקציב: ₪9,500</div>
+  </div>
+  <div class="sticky-catalog-top">
+    <div class="total-bar" id="total-bar">
+      <div class="t-item">
+        <span class="t-label">סה"כ הוזמן:</span>
+        <span class="t-value" id="t-ordered">₪0</span>
+      </div>
+      <div class="total-progress"><div class="total-progress-fill" id="t-progress" style="width:0%"></div></div>
+      <div class="t-item" id="t-balance-item">
+        <span class="t-label" id="t-balance-label">יתרת תקציב:</span>
+        <span class="t-value" id="t-balance">₪9,500</span>
+      </div>
+    </div>
+    <div class="tab-nav" id="tab-nav"></div>
+  </div>
+  <div id="tab-panels" style="flex:1;"></div>
+  <div class="catalog-action-bar">
+    <button class="btn-secondary" onclick="showScreen(2)">← חזור להוראות</button>
+    <button class="btn-primary btn-lg" onclick="goToSummary()">לסיכום ההזמנה ←</button>
+  </div>
+</div>
+
+<!-- ====== SCREEN 4: SUMMARY ====== -->
+<div id="screen-4" class="screen">
+  <div class="summary-wrap">
+    <h2>סיכום ההזמנה</h2>
+    <div id="summary-identity" class="summary-identity-box"></div>
+    <div class="summary-table-wrap" id="summary-table-wrap"></div>
+    <div id="summary-footer"></div>
+    <div id="submit-area"></div>
+  </div>
+</div>
+
+<!-- ====== SIZE MODAL ====== -->
+<div id="modal-overlay" class="modal-overlay">
+  <div class="modal-card" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════
+// CONSTANTS
+// ════════════════════════════════════════════
+const BUDGET = 9500;
+
+// כל הזמנה נשלחת לשלוש הכתובות האלה
+const RECIPIENTS = ['lior@contrast-il.com', 'marketing@contrast-il.com', 'hadas.uzana@gmail.com'];
+
+// כתובת ה-Web App של Google Apps Script (ראו apps-script.js)
+const APPS_SCRIPT_URL = 'PLACEHOLDER_APPS_SCRIPT_URL';
+
+// הערה שמופיעה על פריטים שהתמונה שלהם היא רק המחשה
+const ILLUSTRATIVE = '📷 התמונה להמחשה בלבד';
+
+// מתנה שנוספת אוטומטית לכל הזמנה — לא נבחרת ולא נספרת בתקציב
+const GIFT = {
+  id:   'PB',
+  sku:  'מתנה',
+  cat:  'מתנה',
+  desc: 'מתנה מאיתנו — 3 ואזות ו-3 שרשראות חרוזי עץ לנוי',
+  img:  'PB.webp',
+  note: ILLUSTRATIVE,
+  qty:  1
+};
+
+// ════════════════════════════════════════════
+// PRODUCT DATA — קטלוג ביוטי 09/2026
+// key = מפתח ייחודי בעגלה, id = קוד תצוגה, sizes = קטרים לבחירה
+// ════════════════════════════════════════════
+const PRODUCTS = [
+  // ── כורסאות ──
+  {key:'A1',  id:'A1',  sku:'M06710-C',    cat:'כורסאות', desc:'כורסא מסתובבת', color:'אפור',              price:2599, img:'A1.webp'},
+  {key:'A3',  id:'A3',  sku:'SP0352-VC',   cat:'כורסאות', desc:'כורסא',          color:'אפרפר',             price:999,  img:'A3.webp'},
+  {key:'A6',  id:'A6',  sku:'IL150-30406', cat:'כורסאות', desc:'כורסא',          color:'מושב שחור / גב עץ', price:699,  img:'A6.webp'},
+  {key:'A7',  id:'A7',  sku:'M06715-G',    cat:'כורסאות', desc:'כורסא מסתובבת', color:'אפור',              price:799,  img:'A7.webp'},
+  {key:'A8',  id:'A8',  sku:'M06715-S',    cat:'כורסאות', desc:'כורסא מסתובבת', color:"בז'",               price:799,  img:'A8.webp'},
+  {key:'A9',  id:'A9',  sku:'M06715-R',    cat:'כורסאות', desc:'כורסא מסתובבת', color:'ירוק',              price:799,  img:'A9.webp'},
+  {key:'A10', id:'A10', sku:'M06715-C',    cat:'כורסאות', desc:'כורסא מסתובבת', color:'לבן',               price:799,  img:'A10.webp'},
+
+  // ── כיסאות ──
+  {key:'C2',  id:'C2',  sku:'SP0317-VML',   cat:'כיסאות', desc:'כיסא דמוי עור / גב עץ', color:'אפור כהה',       price:799, img:'C2.webp'},
+  {key:'C3',  id:'C3',  sku:'SP0317-VMS',   cat:'כיסאות', desc:'כיסא דמוי עור / גב עץ', color:'שחור',           price:799, img:'C3.webp'},
+  {key:'C4',  id:'C4',  sku:'SP0316-DGF',   cat:'כיסאות', desc:'כיסא בד',                color:'אפור',           price:699, img:'C4.webp'},
+  {key:'C5',  id:'C5',  sku:'150-36772-GR', cat:'כיסאות', desc:'כיסא בד',                color:'אפור',           price:699, img:'C5.webp'},
+  {key:'C6',  id:'C6',  sku:'150-36772-G',  cat:'כיסאות', desc:'כיסא בד',                color:'ירוק',           price:699, img:'C6.webp'},
+  {key:'C8',  id:'C8',  sku:'15031604',     cat:'כיסאות', desc:'כיסא דמוי עור',          color:'אפור בהיר',      price:699, img:'C8.webp'},
+  {key:'C9',  id:'C9',  sku:'15031606',     cat:'כיסאות', desc:'כיסא דמוי עור',          color:'שחור',           price:699, img:'C9.webp'},
+  {key:'C10', id:'C10', sku:'15031700',     cat:'כיסאות', desc:'כיסא דמוי עור',          color:"בז'",            price:799, img:'C10.webp'},
+  {key:'C11', id:'C11', sku:'15031704',     cat:'כיסאות', desc:'כיסא דמוי עור',          color:'אפור בהיר',      price:799, img:'C11.webp'},
+  {key:'C12', id:'C12', sku:'15031707',     cat:'כיסאות', desc:'כיסא דמוי עור',          color:'קמל',            price:799, img:'C12.webp'},
+  {key:'C17', id:'C17', sku:'SP0369-NO104', cat:'כיסאות', desc:'כיסא בד',                color:'לבן',            price:359, img:'C17.webp'},
+  {key:'C18', id:'C18', sku:'SP0370-BL',    cat:'כיסאות', desc:'כיסא פלסטיק',           color:'שחור',           price:399, img:'C18.webp'},
+  {key:'C20', id:'C20', sku:'SP0373-O',     cat:'כיסאות', desc:'כיסא פלסטיק',           color:'חמרה (טרקוטה)',  price:399, img:'C20.webp'},
+  {key:'C21', id:'C21', sku:'SP0373-IV',    cat:'כיסאות', desc:'כיסא פלסטיק',           color:'לבן',            price:399, img:'C21.webp'},
+  {key:'C23', id:'C23', sku:'SP0383-WG',    cat:'כיסאות', desc:'כיסא פלסטיק',           color:"בז'",            price:399, img:'C23.webp'},
+  {key:'C24', id:'C24', sku:'SP0387-G',     cat:'כיסאות', desc:'כיסא פלסטיק',           color:'ירוק',           price:399, img:'C24.webp'},
+  {key:'C25', id:'C25', sku:'SP0387-B',     cat:'כיסאות', desc:'כיסא פלסטיק',           color:'ורוד',           price:399, img:'C25.webp'},
+  {key:'C26', id:'C26', sku:'SP0418-W8951', cat:'כיסאות', desc:'כיסא פלסטיק מושב בד',   color:'לבן',            price:399, img:'C26.webp'},
+  {key:'C27', id:'C27', sku:'SP0418-O9168', cat:'כיסאות', desc:'כיסא פלסטיק מושב בד',   color:'חמרה (טרקוטה)',  price:399, img:'C27.webp'},
+  {key:'C28', id:'C28', sku:'SP0418-G8343', cat:'כיסאות', desc:'כיסא פלסטיק מושב בד',   color:'ירוק',           price:399, img:'C28.webp'},
+
+  // ── שולחן אירוח חוץ/פנים ──
+  {key:'T1', id:'T1', sku:'SP0419-W', cat:'שולחן אירוח חוץ/פנים', desc:'שולחן נירוסטה חוץ / פנים', color:'לבן',           price:799, img:'T1.webp'},
+  {key:'T2', id:'T2', sku:'SP0419-G', cat:'שולחן אירוח חוץ/פנים', desc:'שולחן נירוסטה חוץ / פנים', color:'ירוק',          price:799, img:'T2.webp'},
+  {key:'T3', id:'T3', sku:'SP0419-O', cat:'שולחן אירוח חוץ/פנים', desc:'שולחן נירוסטה חוץ / פנים', color:'חמרה (טרקוטה)', price:799, img:'T3.webp'},
+
+  // ── שולחן אירוח פנים (בחירת קוטר) ──
+  {key:'L2P1', id:'L2+P1', sku:'15550510', cat:'שולחן אירוח פנים', desc:'שולחן רגל ברזל מעוצבת + פלטת פורניר', color:'אלון שחור', price:2799, img:'L2-P1.webp', sizes:[60,70,80]},
+  {key:'L2P2', id:'L2+P2', sku:'15550510', cat:'שולחן אירוח פנים', desc:'שולחן רגל ברזל מעוצבת + פלטת פורניר', color:'אגוז',      price:2799, img:'L2-P2.webp', sizes:[60,70,80]},
+  {key:'L2P3', id:'L2+P3', sku:'15550510', cat:'שולחן אירוח פנים', desc:'שולחן רגל ברזל מעוצבת + פלטת פורניר', color:'אלון טבעי', price:2799, img:'L2-P3.webp', sizes:[60,70,80]},
+  {key:'L7P1', id:'L7+P1', sku:'M06665A',  cat:'שולחן אירוח פנים', desc:'שולחן רגל ברזל מעוצבת + פלטת פורניר', color:'אלון שחור', price:2699, img:'L7-P1.webp', sizes:[60,70,80]},
+  {key:'L7P2', id:'L7+P2', sku:'M06665A',  cat:'שולחן אירוח פנים', desc:'שולחן רגל ברזל מעוצבת + פלטת פורניר', color:'אגוז',      price:2699, img:'L7-P2.webp', sizes:[60,70,80]},
+  {key:'L7P3', id:'L7+P3', sku:'M06665A',  cat:'שולחן אירוח פנים', desc:'שולחן רגל ברזל מעוצבת + פלטת פורניר', color:'אלון טבעי', price:2699, img:'L7-P3.webp', sizes:[60,70,80]},
+  {key:'L8',   id:'L8',    sku:'M07388',   cat:'שולחן אירוח פנים', desc:'שולחן רגל ברזל מעוצבת + פלטת פורניר', color:"בז'",       price:2899, img:'L8.webp',    sizes:[60,70,80]},
+
+  // ── קונסולה ──
+  {key:'Q1', id:'Q1', sku:'ILB001', cat:'קונסולה', desc:'קונסולה ממתכת', color:'שחור', price:1399, img:'Q1.webp', note:ILLUSTRATIVE},
+  {key:'Q2', id:'Q2', sku:'ILB002', cat:'קונסולה', desc:'קונסולה ממתכת', color:'לבן',  price:1399, img:'Q2.webp', note:ILLUSTRATIVE},
+
+  // ── שולחנות קפה ──
+  {key:'LT1', id:'LT1', sku:'M07306',   cat:'שולחנות קפה', desc:'סט שולחנות אלומיניום', color:'שחור',          price:1599, img:'LT1.webp'},
+  {key:'LT2', id:'LT2', sku:'M07303',   cat:'שולחנות קפה', desc:'שולחן אלומיניום',      color:'טבעי',          price:999,  img:'LT2.webp'},
+  {key:'LT3', id:'LT3', sku:'SP0423W',  cat:'שולחנות קפה', desc:'שולחן פלסטיק',         color:'לבן',           price:299,  img:'LT3.webp'},
+  {key:'LT4', id:'LT4', sku:'SP0423O',  cat:'שולחנות קפה', desc:'שולחן פלסטיק',         color:'חמרה (טרקוטה)', price:299,  img:'LT4.webp'},
+  {key:'LT5', id:'LT5', sku:'SP0423BL', cat:'שולחנות קפה', desc:'שולחן פלסטיק',         color:'שחור',          price:299,  img:'LT5.webp'},
+
+  // ── שטיחים ──
+  {key:'R1', id:'R1', sku:'IL0009', cat:'שטיחים', desc:'שטיח עגול קוטר 160 ס״מ', color:'שמנת', price:899, img:'R1.webp'},
+  {key:'R2', id:'R2', sku:'IL0006', cat:'שטיחים', desc:'שטיח עגול קוטר 160 ס״מ', color:'אפור', price:899, img:'R2.webp'},
+
+  // ── מראות ──
+  {key:'M1', id:'M1', sku:'SP0248-BL', cat:'מראות', desc:'מראה עגולה קוטר 90 ס״מ',      color:'מסגרת שחורה', price:649,  img:'M1.webp'},
+  {key:'M2', id:'M2', sku:'M07086',    cat:'מראות', desc:'מראת מסגרת + תאורה 180×80',   color:'מסגרת שחורה', price:1999, img:'M2.webp'},
+  {key:'M3', id:'M3', sku:'M07091',    cat:'מראות', desc:'מראת לד חצי עיגול 100×70',    color:'מסגרת שחורה', price:499,  img:'M3.webp'},
+  {key:'M4', id:'M4', sku:'M07092',    cat:'מראות', desc:'מראה קפסולה לד 160×50',       color:'מסגרת שחורה', price:649,  img:'M4.webp'},
+  {key:'M5', id:'M5', sku:'M07405-BL', cat:'מראות', desc:'מראה אובלית 90×35',           color:'מסגרת שחורה', price:899,  img:'M5.webp'},
+  {key:'M6', id:'M6', sku:'M07405-W',  cat:'מראות', desc:'מראה אובלית 90×35',           color:'מסגרת לבנה',  price:899,  img:'M6.webp'},
+  {key:'M7', id:'M7', sku:'M07399BL',  cat:'מראות', desc:'מראה אובלית 150×50',          color:'מסגרת שחורה', price:1099, img:'M7.webp'},
+
+  // ── חבילת ביוטי ──
+  {key:'BPK', id:'BPK', sku:'BPK', cat:'חבילת ביוטי', desc:'חבילת ביוטי — שטיח סף, פח אשפה 7 ליטר, סט קפה/תה/סוכר ומראת איפור עם תאורת לד', color:'', price:1299, img:'BPK.webp'},
+];
+
+// סדר הצגת הקטגוריות
+const CAT_ORDER = [
+  'כורסאות','כיסאות','שולחן אירוח חוץ/פנים','שולחן אירוח פנים',
+  'קונסולה','שולחנות קפה','שטיחים','מראות','חבילת ביוטי'
+];
+
+// ════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════
+const cart = {}; // { [key]: { qty, variant } }
+let identity = {};
+let currentModal = null;
+let pendingSize = null;
+
+// ════════════════════════════════════════════
+// HELPERS
+// ════════════════════════════════════════════
+function fmt(n) {
+  return '₪' + Math.abs(n).toLocaleString('he-IL');
+}
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+function imgPath(filename) {
+  return 'pic/' + filename;
+}
+function noImgSvg() {
+  return "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3E%3Crect width='200' height='150' fill='%23E4F0E9'/%3E%3Ctext x='100' y='95' text-anchor='middle' fill='%23A6D3BE' font-size='42'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E";
+}
+function getQty(key) { return cart[key] ? cart[key].qty : 0; }
+function getVariant(key) { return cart[key] ? cart[key].variant : null; }
+function getOrdered() { return PRODUCTS.filter(p => getQty(p.key) > 0); }
+function getTotal() {
+  return PRODUCTS.reduce((sum, p) => sum + (getQty(p.key) * (p.price || 0)), 0);
+}
+function sizeLabel(cm) { return 'קוטר ' + cm + ' ס״מ'; }
+
+// ════════════════════════════════════════════
+// SCREEN NAVIGATION
+// ════════════════════════════════════════════
+function showScreen(n) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + n).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function goToInstructions() {
+  let valid = true;
+  ['f-studio','f-contact','f-phone','f-email'].forEach(id => {
+    const el = document.getElementById(id);
+    el.classList.remove('invalid');
+    if (!el.value.trim()) { el.classList.add('invalid'); valid = false; }
+  });
+  if (!valid) { alert('אנא מלאו את כל השדות המסומנים.'); return; }
+
+  const email = document.getElementById('f-email').value.trim();
+  if (!email.includes('@')) {
+    document.getElementById('f-email').classList.add('invalid');
+    alert('כתובת אי-מייל אינה תקינה.'); return;
+  }
+  identity = {
+    studio:  document.getElementById('f-studio').value.trim(),
+    contact: document.getElementById('f-contact').value.trim(),
+    phone:   document.getElementById('f-phone').value.trim(),
+    email:   email
+  };
+  showScreen(2);
+}
+
+function goToSummary() {
+  renderSummary();
+  showScreen(4);
+}
+
+// ════════════════════════════════════════════
+// CATALOG RENDER
+// ════════════════════════════════════════════
+function initCatalog() {
+  document.getElementById('display-studio').textContent = identity.studio || 'קטלוג GLOW UP';
+  const tabNav = document.getElementById('tab-nav');
+  const tabPanels = document.getElementById('tab-panels');
+  tabNav.innerHTML = '';
+  tabPanels.innerHTML = '';
+
+  const grouped = {};
+  CAT_ORDER.forEach(cat => { grouped[cat] = []; });
+  PRODUCTS.forEach(p => { if (grouped[p.cat]) grouped[p.cat].push(p); });
+
+  CAT_ORDER.forEach((cat, idx) => {
+    const products = grouped[cat];
+    if (!products || products.length === 0) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (idx === 0 ? ' active' : '');
+    btn.id = 'tab-btn-' + idx;
+    btn.dataset.idx = idx;
+    btn.innerHTML = `<span class="tab-count" id="tab-count-${idx}">0</span>${esc(cat)}`;
+    btn.onclick = () => activateTab(idx);
+    tabNav.appendChild(btn);
+
+    const panel = document.createElement('div');
+    panel.className = 'tab-panel' + (idx === 0 ? ' active' : '');
+    panel.id = 'tab-panel-' + idx;
+    const grid = document.createElement('div');
+    grid.className = 'products-grid';
+    products.forEach(p => grid.appendChild(buildCard(p)));
+    panel.appendChild(grid);
+    tabPanels.appendChild(panel);
+  });
+
+  updateTotalBar();
+  updateTabCounts();
+}
+
+function activateTab(idx) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  const btn = document.getElementById('tab-btn-' + idx);
+  const panel = document.getElementById('tab-panel-' + idx);
+  if (btn) btn.classList.add('active');
+  if (panel) panel.classList.add('active');
+}
+
+function buildCard(p) {
+  const card = document.createElement('div');
+  card.className = 'product-card' + (getQty(p.key) > 0 ? ' in-cart' : '');
+  card.id = 'card-' + p.key;
+
+  const colorLine = p.color ? `<div class="product-color">${esc(p.color)}</div>` : '';
+  const noteLine  = p.note ? `<div class="product-note">${esc(p.note)}</div>` : '';
+  const sizeBadge = p.sizes ? '<div class="size-badge">בחירת קוטר</div>' : '';
+
+  card.innerHTML = `
+    <div class="product-img-wrap">
+      <img src="${imgPath(p.img)}" alt="${esc(p.desc)}" loading="lazy" onerror="this.src='${noImgSvg()}'">
+      ${sizeBadge}
+    </div>
+    <div class="product-info">
+      <div class="product-codes">
+        <span class="product-id-badge">${esc(p.id)}</span>
+        <span class="product-sku">${esc(p.sku)}</span>
+      </div>
+      <div class="product-desc">${esc(p.desc)}</div>
+      ${colorLine}
+      ${noteLine}
+      <span class="product-price">${fmt(p.price)}</span>
+    </div>
+    <div class="product-actions" id="actions-${p.key}">
+      ${buildActions(p)}
+    </div>
+  `;
+  return card;
+}
+
+function buildActions(p) {
+  const qty = getQty(p.key);
+  const variant = getVariant(p.key);
+  const variantTag = (p.sizes && variant)
+    ? `<div style="margin-top:4px"><span class="variant-tag" onclick="openModal('${p.key}', true)">✏️ ${esc(variant)}</span></div>`
+    : '';
+  return `
+    <div class="qty-controls">
+      <button class="qty-btn" onclick="changeQty('${p.key}',-1)" ${qty === 0 ? 'disabled' : ''}>−</button>
+      <span class="qty-display">${qty}</span>
+      <button class="qty-btn" onclick="handleAdd('${p.key}')">+</button>
+    </div>
+    ${variantTag}
+  `;
+}
+
+function refreshCard(key) {
+  const p = PRODUCTS.find(x => x.key === key);
+  if (!p) return;
+  const actions = document.getElementById('actions-' + key);
+  if (actions) actions.innerHTML = buildActions(p);
+  const card = document.getElementById('card-' + key);
+  if (card) card.classList.toggle('in-cart', getQty(key) > 0);
+}
+
+// ════════════════════════════════════════════
+// CART OPERATIONS
+// ════════════════════════════════════════════
+function handleAdd(key) {
+  const p = PRODUCTS.find(x => x.key === key);
+  if (!p) return;
+  if (p.sizes && getQty(key) === 0) {
+    openModal(key, false);
+  } else {
+    setQty(key, getQty(key) + 1);
+  }
+}
+
+function changeQty(key, delta) {
+  setQty(key, Math.max(0, getQty(key) + delta));
+}
+
+function setQty(key, qty) {
+  if (!cart[key]) cart[key] = { qty: 0, variant: null };
+  cart[key].qty = qty;
+  if (qty === 0) cart[key].variant = null;
+  refreshCard(key);
+  updateTotalBar();
+  updateTabCounts();
+}
+
+// ════════════════════════════════════════════
+// TOTAL BAR
+// ════════════════════════════════════════════
+function updateTotalBar() {
+  const total = getTotal();
+  const balance = BUDGET - total;
+  const pct = Math.min(100, (total / BUDGET) * 100);
+  document.getElementById('t-ordered').textContent = fmt(total);
+  document.getElementById('t-balance').textContent = fmt(Math.abs(balance));
+  document.getElementById('t-progress').style.width = pct + '%';
+  document.getElementById('t-progress').className = 'total-progress-fill' + (total > BUDGET ? ' over' : '');
+  const balItem = document.getElementById('t-balance-item');
+  const balLabel = document.getElementById('t-balance-label');
+  if (total > BUDGET) {
+    balItem.classList.add('over-budget');
+    balLabel.textContent = 'יתרה לתשלום:';
+  } else {
+    balItem.classList.remove('over-budget');
+    balLabel.textContent = 'יתרת תקציב:';
+  }
+}
+
+function updateTabCounts() {
+  const counts = {};
+  CAT_ORDER.forEach((cat, idx) => { counts[idx] = 0; });
+  PRODUCTS.forEach(p => {
+    const idx = CAT_ORDER.indexOf(p.cat);
+    if (idx >= 0) counts[idx] += getQty(p.key);
+  });
+  CAT_ORDER.forEach((_, idx) => {
+    const el = document.getElementById('tab-count-' + idx);
+    if (el) {
+      el.textContent = counts[idx];
+      el.style.display = counts[idx] > 0 ? 'inline-flex' : 'none';
+    }
+  });
+}
+
+// ════════════════════════════════════════════
+// SIZE MODAL — בחירת קוטר לשולחנות אירוח פנים
+// ════════════════════════════════════════════
+function openModal(key, editMode) {
+  const p = PRODUCTS.find(x => x.key === key);
+  if (!p || !p.sizes) return;
+  currentModal = p;
+  pendingSize = (editMode && getVariant(key)) ? getVariant(key) : null;
+  showSizeStep();
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function showSizeStep() {
+  const p = currentModal;
+  const circleSizes = { 60: 46, 70: 56, 80: 66 };
+
+  document.getElementById('modal-body').innerHTML = `
+    <div class="modal-product-preview">
+      <img src="${imgPath(p.img)}" alt="${esc(p.desc)}" onerror="this.src='${noImgSvg()}'">
+      <div class="mpd">
+        <div class="mpd-name">${esc(p.desc)}</div>
+        <div class="mpd-id">פריט ${esc(p.id)} | ${esc(p.sku)} | ${esc(p.color)}</div>
+        <div class="mpd-price">${fmt(p.price)}</div>
+        ${p.note ? `<div class="product-note" style="margin-top:6px;">${esc(p.note)}</div>` : ''}
+      </div>
+    </div>
+    <div class="modal-section-title">בחירת קוטר הפלטה</div>
+    <div class="sizes-grid" id="sizes-grid">
+      ${p.sizes.map(cm => {
+        const d = circleSizes[cm] || 56;
+        return `
+        <div class="size-option ${pendingSize === sizeLabel(cm) ? 'selected' : ''}"
+             data-size="${cm}" onclick="selectSize(this)">
+          <div class="size-circle" style="width:${d}px;height:${d}px;"></div>
+          <div class="size-label">${cm} ס״מ</div>
+          <div class="size-sub">קוטר</div>
+        </div>`;
+      }).join('')}
+    </div>
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="closeModal()">ביטול</button>
+      <button class="btn-primary" id="modal-confirm-btn" onclick="confirmSize()"
+        ${pendingSize ? '' : 'disabled'}>אישור</button>
+    </div>
+  `;
+}
+
+function selectSize(el) {
+  pendingSize = sizeLabel(el.dataset.size);
+  document.querySelectorAll('#sizes-grid .size-option').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('modal-confirm-btn').disabled = false;
+}
+
+function confirmSize() {
+  if (!currentModal || !pendingSize) return;
+  const key = currentModal.key;
+  if (!cart[key]) cart[key] = { qty: 0, variant: null };
+  if (cart[key].qty === 0) cart[key].qty = 1;
+  cart[key].variant = pendingSize;
+  closeModal();
+  refreshCard(key);
+  updateTotalBar();
+  updateTabCounts();
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  currentModal = null;
+  pendingSize = null;
+}
+
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// ════════════════════════════════════════════
+// SUMMARY
+// ════════════════════════════════════════════
+function renderSummary() {
+  document.getElementById('summary-identity').innerHTML = `
+    <div class="si-item"><div class="si-label">סטודיו / קליניקה</div><div class="si-value">${esc(identity.studio)}</div></div>
+    <div class="si-item"><div class="si-label">איש קשר</div><div class="si-value">${esc(identity.contact)}</div></div>
+    <div class="si-item"><div class="si-label">נייד</div><div class="si-value">${esc(identity.phone)}</div></div>
+    <div class="si-item"><div class="si-label">אי-מייל</div><div class="si-value">${esc(identity.email)}</div></div>
+  `;
+
+  const ordered = getOrdered();
+  if (ordered.length === 0) {
+    document.getElementById('summary-table-wrap').innerHTML =
+      '<div class="no-items-notice">לא נבחרו פריטים. חזרו לקטלוג והוסיפו פריטים להזמנה.</div>';
+    document.getElementById('summary-footer').innerHTML = '';
+    document.getElementById('submit-area').innerHTML =
+      `<div class="summary-footer-btns">
+        <button class="btn-secondary" onclick="showScreen(3)">← חזור לקטלוג</button>
+      </div>`;
+    return;
+  }
+
+  const total = getTotal();
+  const balance = total - BUDGET;
+
+  let rows = ordered.map(p => {
+    const qty = getQty(p.key);
+    const variant = getVariant(p.key);
+    const variantCell = variant ? `<br><small style="color:var(--text-muted)">${esc(variant)}</small>` : '';
+    return `<tr>
+      <td data-label="תמונה" style="text-align:center;padding:6px;">
+        <img src="${imgPath(p.img)}" alt="${esc(p.id)}"
+          style="width:64px;height:64px;object-fit:contain;background:var(--bg);border-radius:6px;padding:4px;display:block;margin:auto;"
+          onerror="this.style.display='none'">
+      </td>
+      <td data-label="פריט"><strong>${esc(p.id)}</strong></td>
+      <td data-label='מק"ט'>${esc(p.sku)}</td>
+      <td data-label="קטגוריה">${esc(p.cat)}</td>
+      <td data-label="תיאור">${esc(p.desc)}${p.color ? ' — ' + esc(p.color) : ''}${variantCell}${
+        p.note ? `<br><small style="color:var(--accent-hover)">${esc(p.note)}</small>` : ''}</td>
+      <td data-label="כמות" style="text-align:center">${qty}</td>
+      <td data-label="מחיר יחידה">${fmt(p.price)}</td>
+      <td data-label='סה"כ'><strong>${fmt(qty * p.price)}</strong></td>
+    </tr>`;
+  }).join('');
+
+  // מתנה אוטומטית — מוצגת בעדינות בסוף ההזמנה
+  rows += `<tr class="summary-gift-row">
+    <td data-label="תמונה" style="text-align:center;padding:6px;">
+      <img src="${imgPath(GIFT.img)}" alt="${esc(GIFT.id)}"
+        style="width:64px;height:64px;object-fit:contain;background:#fff;border-radius:6px;padding:4px;display:block;margin:auto;"
+        onerror="this.style.display='none'">
+    </td>
+    <td data-label="פריט"><strong>🎁 ${esc(GIFT.id)}</strong></td>
+    <td data-label='מק"ט'>—</td>
+    <td data-label="קטגוריה">מתנה</td>
+    <td data-label="תיאור">${esc(GIFT.desc)}<br><small>${esc(GIFT.note)}</small></td>
+    <td data-label="כמות" style="text-align:center">1</td>
+    <td data-label="מחיר יחידה">מתנה</td>
+    <td data-label='סה"כ'><strong>מתנה</strong></td>
+  </tr>`;
+
+  rows += `<tr class="summary-total-row">
+    <td colspan="5"></td>
+    <td colspan="2" style="text-align:left;white-space:nowrap;"><strong>סה"כ הזמנה:</strong></td>
+    <td><strong>${fmt(total)}</strong></td>
+  </tr>`;
+
+  if (balance > 0) {
+    rows += `<tr class="summary-balance-row">
+      <td colspan="5"></td>
+      <td colspan="2" style="text-align:left;white-space:nowrap;"><strong>יתרה לתשלום:</strong></td>
+      <td><strong>${fmt(balance)}</strong></td>
+    </tr>`;
+  }
+
+  document.getElementById('summary-table-wrap').innerHTML = `
+    <table class="summary-table">
+      <thead><tr>
+        <th>תמונה</th><th>פריט</th><th>מק"ט</th><th>קטגוריה</th><th>תיאור</th>
+        <th>כמות</th><th>מחיר יחידה</th><th>סה"כ</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+
+  document.getElementById('summary-footer').innerHTML = balance > 0
+    ? `<div style="background:#FDF2F2;border:1px solid #E8A0A0;border-radius:8px;padding:12px 16px;margin-top:16px;color:var(--danger);font-weight:600;">
+        ⚠️ סכום ההזמנה (${fmt(total)}) עולה על תקציב ₪9,500. יתרה לתשלום: <strong>${fmt(balance)}</strong>
+       </div>`
+    : '';
+
+  document.getElementById('submit-area').innerHTML = `
+    <div class="summary-footer-btns">
+      <button class="btn-secondary" onclick="showScreen(3)">← חזור לעריכה</button>
+      <button class="btn-tertiary" onclick="exportPDF()">הורד PDF</button>
+      <button class="btn-primary btn-lg" onclick="submitOrder()">שלח הזמנה ←</button>
+    </div>`;
+}
+
+// ════════════════════════════════════════════
+// ORDER PAYLOAD — משמש למייל, לאקסל ולגיליון המרכזי
+// ════════════════════════════════════════════
+function buildOrderItems() {
+  const items = getOrdered().map(p => ({
+    id:       p.id,
+    sku:      String(p.sku),
+    cat:      p.cat,
+    desc:     p.desc,
+    color:    p.color || '',
+    variant:  getVariant(p.key) || '',
+    note:     p.note || '',
+    qty:      getQty(p.key),
+    price:    p.price,
+    subtotal: getQty(p.key) * p.price,
+    isGift:   false
+  }));
+  if (items.length > 0) {
+    items.push({
+      id: GIFT.id, sku: '', cat: GIFT.cat, desc: GIFT.desc, color: '',
+      variant: '', note: GIFT.note, qty: GIFT.qty, price: 0, subtotal: 0, isGift: true
+    });
+  }
+  return items;
+}
+
+// ════════════════════════════════════════════
+// EXCEL EXPORT (ExcelJS — עם תמונות מוטמעות)
+// ════════════════════════════════════════════
+
+/** טוען קובץ מ-pic/ וממיר לתמונה ממוזערת 80×60 בפורמט JPEG
+ *  (אקסל לא תומך ב-webp, ולכן ההמרה דרך Canvas היא הכרחית) */
+async function makeThumb(filename) {
+  try {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), 3000);
+    const resp = await fetch(imgPath(filename), { signal: ctrl.signal });
+    clearTimeout(t);
+    if (!resp.ok) return null;
+    const blob = await resp.blob();
+    return await new Promise(res => {
+      const img = new Image();
+      const blobUrl = URL.createObjectURL(blob);
+      img.onload = () => {
+        URL.revokeObjectURL(blobUrl);
+        const canvas = document.createElement('canvas');
+        canvas.width = 80; canvas.height = 60;
+        const ctx = canvas.getContext('2d');
+        const scale = Math.min(80 / img.width, 60 / img.height);
+        const w = img.width * scale, h = img.height * scale;
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, 80, 60);
+        ctx.drawImage(img, (80 - w) / 2, (60 - h) / 2, w, h);
+        res({ b64: canvas.toDataURL('image/jpeg', 0.75).split(',')[1], ext: 'jpeg' });
+      };
+      img.onerror = () => { URL.revokeObjectURL(blobUrl); res(null); };
+      img.src = blobUrl;
+    });
+  } catch(e) { return null; }
+}
+
+async function exportExcel() {
+  const workbook = new ExcelJS.Workbook();
+  const ordered = getOrdered();
+  const sheetName = (identity.studio || 'הזמנה').replace(/[:\\/\[\]\*\?]/g, '').substring(0, 31);
+  const ws = workbook.addWorksheet(sheetName, { views: [{ rightToLeft: true }] });
+
+  ws.columns = [
+    { width: 11 },  // תמונה
+    { width: 9  },  // פריט
+    { width: 16 },  // מק"ט
+    { width: 20 },  // קטגוריה
+    { width: 44 },  // תיאור
+    { width: 18 },  // צבע
+    { width: 16 },  // קוטר נבחר
+    { width: 7  },  // כמות
+    { width: 14 },  // מחיר
+    { width: 12 },  // סה"כ
+  ];
+
+  const hdr = ws.addRow(['תמונה','פריט','מק"ט','קטגוריה','תיאור','צבע','קוטר נבחר','כמות','מחיר','סה"כ']);
+  hdr.height = 22;
+  hdr.eachCell(cell => {
+    cell.fill = { type:'pattern', pattern:'solid', fgColor:{ argb:'FF4E8C74' } };
+    cell.font = { color:{ argb:'FFFFFFFF' }, bold:true, size:10 };
+    cell.alignment = { horizontal:'right', vertical:'middle' };
+  });
+
+  // תמונות ממוזערות 80×60 דרך Canvas — קטן ומהיר (וממיר webp ל-JPEG שאקסל תומך בו)
+  const imageData = await Promise.all(
+    ordered.map(p => p.img).concat([GIFT.img]).map(makeThumb)
+  );
+  const giftThumb = imageData[imageData.length - 1];
+
+  const placeImage = (thumb, rowIdx) => {
+    if (!thumb) return;
+    const imgId = workbook.addImage({ base64: thumb.b64, extension: thumb.ext });
+    ws.addImage(imgId, {
+      tl: { col: 0, row: rowIdx, nativeColOff: 3 * 9525, nativeRowOff: 3 * 9525 },
+      ext: { width: 70, height: 52 },
+      editAs: 'oneCell'
+    });
+  };
+
+  for (let i = 0; i < ordered.length; i++) {
+    const p = ordered[i];
+    const qty = getQty(p.key);
+    const descCell = p.note ? `${p.desc}\n(${p.note.replace(/^📷\s*/, '')})` : p.desc;
+    const row = ws.addRow(['', p.id, String(p.sku), p.cat, descCell, p.color || '',
+                           getVariant(p.key) || '', qty, p.price, qty * p.price]);
+    row.height = 58;
+    row.eachCell({ includeEmpty: true }, (cell, colNum) => {
+      cell.alignment = { horizontal:'right', vertical:'middle', wrapText: colNum === 5 };
+      cell.border = { bottom: { style:'thin', color:{ argb:'FFCFE3D8' } } };
+    });
+    placeImage(imageData[i], i + 1);
+  }
+
+  // שורת המתנה — נוספת אוטומטית לכל הזמנה
+  const giftRow = ws.addRow(['', GIFT.id, '', GIFT.cat,
+                             `${GIFT.desc}\n(${GIFT.note.replace(/^📷\s*/, '')})`,
+                             '', '', GIFT.qty, 'מתנה', 'מתנה']);
+  giftRow.height = 58;
+  giftRow.eachCell({ includeEmpty: true }, (cell, colNum) => {
+    cell.fill = { type:'pattern', pattern:'solid', fgColor:{ argb:'FFF6E9EB' } };
+    cell.font = { color:{ argb:'FFA96D78' }, bold:true, size:10 };
+    cell.alignment = { horizontal:'right', vertical:'middle', wrapText: colNum === 5 };
+  });
+  placeImage(giftThumb, ordered.length + 1);
+
+  const total = getTotal();
+  const balance = total - BUDGET;
+  ws.addRow([]);
+  const tRow = ws.addRow(['','','','','','','','','סה"כ הזמנה:', total]);
+  tRow.getCell(9).font = { bold:true };  tRow.getCell(10).font = { bold:true };
+  tRow.getCell(9).alignment = tRow.getCell(10).alignment = { horizontal:'right' };
+  const bRow = ws.addRow(['','','','','','','','','תקציב:', BUDGET]);
+  bRow.getCell(9).alignment = bRow.getCell(10).alignment = { horizontal:'right' };
+  if (balance > 0) {
+    const balRow = ws.addRow(['','','','','','','','','יתרה לתשלום:', balance]);
+    [9,10].forEach(n => {
+      balRow.getCell(n).font = { bold:true, color:{ argb:'FFCC0000' } };
+      balRow.getCell(n).alignment = { horizontal:'right' };
+    });
+  }
+  ws.addRow([]);
+  ws.addRow(['סטודיו / קליניקה:', identity.studio]);
+  ws.addRow(['איש קשר:', identity.contact]);
+  ws.addRow(['נייד:', identity.phone]);
+  ws.addRow(['אי-מייל:', identity.email]);
+  ws.addRow(['תאריך:', new Date().toLocaleDateString('he-IL')]);
+
+  const buffer = await workbook.xlsx.writeBuffer();
+  const date = new Date().toLocaleDateString('he-IL').replace(/\//g,'-');
+  const filename = `הזמנה_${sheetName}_${date}.xlsx`;
+
+  const blob = new Blob([buffer], { type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = filename; a.click();
+  URL.revokeObjectURL(url);
+
+  const base64 = await new Promise(res => {
+    const reader = new FileReader();
+    reader.onloadend = () => res(reader.result.split(',')[1]);
+    reader.readAsDataURL(new Blob([buffer]));
+  });
+  return { base64, filename };
+}
+
+// ════════════════════════════════════════════
+// PDF EXPORT
+// הפונטים המובנים של jsPDF לא תומכים בעברית ואין בו סידור
+// דו-כיווני, ולכן מרנדרים את דף הסיכום עצמו דרך html2canvas
+// ומטמיעים את התוצאה ב-PDF. כך העברית וה-RTL תמיד נכונים.
+// ════════════════════════════════════════════
+function buildPrintDoc() {
+  const items = buildOrderItems();
+  const total = getTotal();
+  const balance = total - BUDGET;
+  const date = new Date().toLocaleDateString('he-IL');
+
+  const rows = items.map(it => {
+    const gift = it.isGift;
+    const bg = gift ? 'background:#F6E9EB;color:#A96D78;font-weight:600;' : '';
+    const td = `padding:7px 9px;border-bottom:1px solid #CFE3D8;font-size:12px;${bg}`;
+    const tdC = `${td}text-align:center;`;
+    const extras = [it.color, it.variant, it.note].filter(Boolean).join(' · ');
+    return `<tr>
+      <td style="${td}">${gift ? '🎁 ' : ''}<b>${esc(it.id)}</b></td>
+      <td style="${td}">${esc(it.sku || '—')}</td>
+      <td style="${td}">${esc(it.desc)}${extras ? `<br><span style="font-size:10.5px;color:#6E8279">${esc(extras)}</span>` : ''}</td>
+      <td style="${tdC}">${it.qty}</td>
+      <td style="${tdC}">${gift ? 'מתנה' : fmt(it.price)}</td>
+      <td style="${tdC}font-weight:700;">${gift ? 'מתנה' : fmt(it.subtotal)}</td>
+    </tr>`;
+  }).join('');
+
+  const el = document.createElement('div');
+  el.id = 'print-doc';
+  el.setAttribute('dir', 'rtl');
+  el.style.cssText = 'position:fixed;top:0;left:-10000px;width:794px;padding:32px;' +
+    'background:#fff;font-family:\'Segoe UI\',Arial,sans-serif;color:#24352C;z-index:-1;';
+  el.innerHTML = `
+    <div style="background:linear-gradient(135deg,#4E8C74,#74AE96);color:#fff;padding:20px;border-radius:8px;text-align:center;">
+      <div style="font-size:26px;font-weight:800;letter-spacing:6px;">GLOW UP</div>
+      <div style="font-size:15px;margin-top:4px;">קטלוג רענון סטודיו / קליניקה 2026</div>
+      <div style="font-size:12px;opacity:0.85;margin-top:2px;">מועצה אזורית מעלה יוסף — גליל מערבי</div>
+    </div>
+    <table style="width:100%;border-collapse:collapse;margin:18px 0;font-size:12.5px;">
+      <tr>
+        <td style="padding:3px 0;color:#6E8279;width:110px;">סטודיו / קליניקה:</td><td style="font-weight:700;">${esc(identity.studio)}</td>
+        <td style="padding:3px 0;color:#6E8279;width:70px;">תאריך:</td><td>${date}</td>
+      </tr>
+      <tr>
+        <td style="padding:3px 0;color:#6E8279;">איש קשר:</td><td>${esc(identity.contact)}</td>
+        <td style="padding:3px 0;color:#6E8279;">נייד:</td><td>${esc(identity.phone)}</td>
+      </tr>
+      <tr><td style="padding:3px 0;color:#6E8279;">אי-מייל:</td><td colspan="3">${esc(identity.email)}</td></tr>
+    </table>
+    <table style="width:100%;border-collapse:collapse;border:1px solid #CFE3D8;">
+      <thead><tr style="background:#4E8C74;color:#fff;font-size:12px;">
+        <th style="padding:8px 9px;text-align:right;">פריט</th>
+        <th style="padding:8px 9px;text-align:right;">מק"ט</th>
+        <th style="padding:8px 9px;text-align:right;">תיאור</th>
+        <th style="padding:8px 9px;">כמות</th>
+        <th style="padding:8px 9px;">מחיר</th>
+        <th style="padding:8px 9px;">סה"כ</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div style="margin-top:16px;padding:14px 18px;border:1px solid #CFE3D8;border-radius:8px;">
+      <div style="font-size:16px;font-weight:800;color:#4E8C74;">סה"כ הזמנה: ${fmt(total)}</div>
+      <div style="font-size:12.5px;color:#6E8279;margin-top:4px;">תקציב: ${fmt(BUDGET)}</div>
+      ${balance > 0
+        ? `<div style="font-size:14px;font-weight:700;color:#C0392B;margin-top:6px;">יתרה לתשלום: ${fmt(balance)}</div>`
+        : `<div style="font-size:13px;color:#4E8C74;margin-top:6px;">יתרה זמינה: ${fmt(Math.abs(balance))}</div>`}
+    </div>
+    <div style="margin-top:12px;padding:9px 16px;background:#F6E9EB;border:1px solid #E4C4C9;border-radius:8px;color:#A96D78;font-size:12.5px;text-align:center;">
+      🎁 מתנה מאיתנו מצורפת להזמנה — 3 ואזות ו-3 שרשראות חרוזי עץ לנוי
+    </div>
+    <div style="margin-top:10px;padding:9px 16px;background:#FFF8E5;border:1px solid #E3C56A;border-radius:8px;color:#7A5A00;font-size:12px;text-align:center;">
+      ⚠️ עלות הובלה והרכבה — ₪500 לכל הזמנה. אינה כלולה בתקציב.
+    </div>
+  `;
+  document.body.appendChild(el);
+  return el;
+}
+
+async function exportPDF() {
+  const el = buildPrintDoc();
+  try {
+    const canvas = await html2canvas(el, { scale: 2, backgroundColor: '#ffffff', useCORS: true });
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4', compress: true });
+    doc.setProperties({ title: `הזמנה — ${identity.studio}` });
+
+    const pageW = 210, pageH = 297, margin = 8;
+    const imgW = pageW - margin * 2;
+    const pxPerMm = canvas.width / imgW;
+    const pageSliceH = Math.floor((pageH - margin * 2) * pxPerMm); // גובה עמוד בפיקסלים של הקנבס
+
+    for (let offset = 0, page = 0; offset < canvas.height; offset += pageSliceH, page++) {
+      const sliceH = Math.min(pageSliceH, canvas.height - offset);
+      const slice = document.createElement('canvas');
+      slice.width = canvas.width;
+      slice.height = sliceH;
+      slice.getContext('2d').drawImage(canvas, 0, offset, canvas.width, sliceH, 0, 0, canvas.width, sliceH);
+      if (page > 0) doc.addPage();
+      doc.addImage(slice.toDataURL('image/jpeg', 0.92), 'JPEG',
+                   margin, margin, imgW, sliceH / pxPerMm);
+    }
+
+    const date = new Date().toLocaleDateString('he-IL').replace(/\//g, '-');
+    const filename = `הזמנה_${identity.studio}_${date}.pdf`;
+    doc.save(filename);
+    return { filename };
+  } finally {
+    el.remove();
+  }
+}
+
+// ════════════════════════════════════════════
+// EMAIL + גיליון מרכזי via Google Apps Script
+// ════════════════════════════════════════════
+function buildEmailBody(items) {
+  const total = getTotal();
+  const balance = total - BUDGET;
+  const date = new Date().toLocaleDateString('he-IL');
+
+  const lines = [];
+  lines.push(`סיכום הזמנת GLOW UP — ${identity.studio}`);
+  lines.push(`תאריך: ${date}`);
+  lines.push(`איש קשר: ${identity.contact} | נייד: ${identity.phone} | מייל: ${identity.email}`);
+  lines.push('');
+  lines.push('פרטי ההזמנה:');
+  lines.push('─────────────────────────────────────────');
+  items.forEach(it => {
+    const desc = it.variant ? `${it.desc} — ${it.variant}` : it.desc;
+    const price    = it.isGift ? 'מתנה' : fmt(it.price);
+    const subtotal = it.isGift ? 'מתנה' : fmt(it.subtotal);
+    lines.push(`${it.id} | ${it.sku || '—'} | ${desc} | ${it.qty} | ${price} | ${subtotal}`);
+  });
+  lines.push('─────────────────────────────────────────');
+  lines.push(`סה"כ הזמנה: ${fmt(total)}`);
+  if (balance > 0) lines.push(`יתרה לתשלום (מעל תקציב): ${fmt(balance)}`);
+  lines.push(`תקציב מנוצל: ${fmt(Math.min(total, BUDGET))} מתוך ${fmt(BUDGET)}`);
+  return lines.join('\n');
+}
+
+async function sendOrder(items, xlsxBase64, xlsxFilename) {
+  if (APPS_SCRIPT_URL === 'PLACEHOLDER_APPS_SCRIPT_URL') {
+    console.warn('Apps Script URL not configured — skipping email + sheet logging');
+    return { ok: false, reason: 'no-url' };
+  }
+  try {
+    const total = getTotal();
+    const date = new Date().toLocaleDateString('he-IL');
+    const params = new URLSearchParams({
+      recipients:   RECIPIENTS.join(','),
+      customer:     identity.email,
+      subject:      `הזמנת GLOW UP — ${identity.studio} — ${date}`,
+      body:         buildEmailBody(items),
+      studio:       identity.studio,
+      contact:      identity.contact,
+      phone:        identity.phone,
+      email:        identity.email,
+      total:        String(total),
+      budget:       String(BUDGET),
+      balance:      String(Math.max(0, total - BUDGET)),
+      date:         date,
+      items:        JSON.stringify(items),
+      xlsxBase64:   xlsxBase64 || '',
+      xlsxFilename: xlsxFilename || `הזמנה_${identity.studio}.xlsx`
+    });
+    await fetch(APPS_SCRIPT_URL, { method: 'POST', body: params, mode: 'no-cors' });
+    return { ok: true };
+  } catch(e) {
+    console.error('Order submit failed:', e);
+    return { ok: false, reason: e.message };
+  }
+}
+
+// ════════════════════════════════════════════
+// SUBMIT ORDER
+// ════════════════════════════════════════════
+async function submitOrder() {
+  if (getOrdered().length === 0) {
+    alert('לא נבחרו פריטים. אנא חזרו לקטלוג והוסיפו פריטים לפני שליחת ההזמנה.');
+    return;
+  }
+
+  const btn = document.querySelector('#submit-area .btn-primary');
+  if (btn) { btn.disabled = true; btn.textContent = 'מכין קובץ Excel...'; }
+
+  try {
+    const items = buildOrderItems();
+    const { base64, filename } = await exportExcel();
+    if (btn) btn.textContent = 'שולח הזמנה...';
+    const result = await sendOrder(items, base64, filename);
+
+    const total = getTotal();
+    const balance = total - BUDGET;
+
+    document.getElementById('summary-table-wrap').innerHTML = '';
+    document.getElementById('summary-footer').innerHTML = '';
+    document.getElementById('summary-identity').innerHTML = '';
+    document.getElementById('submit-area').innerHTML = `
+      <div class="success-box">
+        <div class="success-icon">✅</div>
+        <h3>ההזמנה נשלחה בהצלחה!</h3>
+        <p>קובץ Excel הורד למחשב שלכם.</p>
+        ${result.ok
+          ? `<p style="margin-top:8px">אישור נשלח לכתובת: <strong>${esc(identity.email)}</strong></p>`
+          : `<p style="margin-top:8px;color:var(--text-muted)">שימו לב: לא הצלחנו לשלוח מייל אוטומטי. אנא שמרו את קובץ ה-Excel.</p>`}
+        <p style="margin-top:12px;color:var(--accent-hover);font-weight:600;">🎁 מתנה מאיתנו מצורפת להזמנה</p>
+        ${balance > 0 ? `<p style="margin-top:8px;color:var(--danger);font-weight:600;">יתרה לתשלום: ${fmt(balance)}</p>` : ''}
+        <p style="margin-top:16px;font-size:0.85rem;color:var(--text-muted)">
+          ${esc(identity.studio)} | סה"כ: ${fmt(total)}
+        </p>
+      </div>`;
+    document.querySelector('.summary-wrap h2').textContent = '';
+  } catch(e) {
+    if (btn) { btn.disabled = false; btn.textContent = 'שלח הזמנה ←'; }
+    alert('אירעה שגיאה בעת שליחת ההזמנה. אנא נסו שוב.');
+    console.error(e);
+  }
+}
+
+// ════════════════════════════════════════════
+// INIT — בניית הקטלוג בכניסה הראשונה למסך 3
+// ════════════════════════════════════════════
+(function() {
+  const origShowScreen = showScreen;
+  let catalogBuilt = false;
+  window.showScreen = function(n) {
+    if (n === 3 && !catalogBuilt) {
+      catalogBuilt = true;
+      origShowScreen(3);
+      initCatalog();
+    } else {
+      origShowScreen(n);
+    }
+  };
+})();
+</script>
+</body>
+</html>
