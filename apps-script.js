@@ -34,6 +34,10 @@ var TAB_STUDIOS = 'סיכום לפי סטודיו';
 
 var BUDGET = 9500;
 
+// תצוגת עמודת התאריך בגיליון. הערך עצמו נשמר כתאריך אמיתי
+// (לא מחרוזת) כדי שהמיון והסינון לפי טווח תאריכים יעבדו.
+var TS_FORMAT = 'dd/MM/yyyy HH:mm';
+
 // קטלוג הפריטים — חייב להישאר תואם ל-PRODUCTS שב-index.html.
 // משמש לאכלוס טאב "ריכוז כמויות" ולנוסחאות ה-SUMIF.
 var CATALOG = [
@@ -73,7 +77,6 @@ var CATALOG = [
   ['M06665A',     'L7+P1', 'שולחן רגל ברזל + פלטת פורניר — אלון שחור', 2699],
   ['M06665A',     'L7+P2', 'שולחן רגל ברזל + פלטת פורניר — אגוז',      2699],
   ['M06665A',     'L7+P3', 'שולחן רגל ברזל + פלטת פורניר — אלון טבעי', 2699],
-  ['M07388',      'L8',    "שולחן רגל ברזל + פלטת פורניר — בז'",       2899],
   ['ILB001',      'Q1',    'קונסולה ממתכת — שחור',                     1399],
   ['ILB002',      'Q2',    'קונסולה ממתכת — לבן',                      1399],
   ['M07306',      'LT1',   'סט שולחנות אלומיניום — שחור',              1599],
@@ -134,7 +137,7 @@ function doPost(e) {
 
     // 1. רישום בגיליון המרכזי — קודם, כדי שההזמנה לא תאבד אם המייל נכשל
     try {
-      logToSheet(studio, contact, phone, email, date, items, total, budget, balance);
+      logToSheet(studio, contact, phone, email, items, total, budget, balance);
     } catch (sheetErr) {
       Logger.log('Sheet logging failed: ' + sheetErr);
     }
@@ -264,15 +267,16 @@ function rebuildTotals(ss) {
   sh.getRange(2, 5, rows.length, 1).setFontWeight('bold');
 }
 
-function logToSheet(studio, contact, phone, email, date, items, total, budget, balance) {
+function logToSheet(studio, contact, phone, email, items, total, budget, balance) {
   var ss = getSpreadsheet();
+  var now = new Date();   // תאריך אמיתי — נשמר כערך ולא כטקסט, כדי שהמיון יעבוד
 
   // טאב "הזמנות" — שורה לכל פריט
   var orders = getOrCreateTab(ss, TAB_ORDERS, ORDER_HEADERS);
   if (items.length > 0) {
     var rows = items.map(function(it) {
       return [
-        date, studio, contact, phone, email,
+        now, studio, contact, phone, email,
         it.sku || '', it.id || '', it.desc || '', it.color || '', it.variant || '',
         Number(it.qty) || 0,
         it.isGift ? 0 : (Number(it.price) || 0),
@@ -282,6 +286,7 @@ function logToSheet(studio, contact, phone, email, date, items, total, budget, b
     var start = orders.getLastRow() + 1;
     ensureRows(orders, start + rows.length);
     orders.getRange(start, 1, rows.length, ORDER_HEADERS.length).setValues(rows);
+    orders.getRange(start, 1, rows.length, 1).setNumberFormat(TS_FORMAT);
   }
 
   // טאב "סיכום לפי סטודיו" — שורה לכל הזמנה
@@ -289,7 +294,11 @@ function logToSheet(studio, contact, phone, email, date, items, total, budget, b
   var itemCount = items.reduce(function(s, it) {
     return s + (it.isGift ? 0 : (Number(it.qty) || 0));
   }, 0);
-  studios.appendRow([date, studio, contact, phone, email, itemCount, total, budget, balance]);
+  var srow = studios.getLastRow() + 1;
+  ensureRows(studios, srow);
+  studios.getRange(srow, 1, 1, STUDIO_HEADERS.length)
+         .setValues([[now, studio, contact, phone, email, itemCount, total, budget, balance]]);
+  studios.getRange(srow, 1).setNumberFormat(TS_FORMAT);
 
   // ודא שטאב הריכוז קיים ומאוכלס (נוסחאות ה-SUMIF מתעדכנות לבד)
   if (!ss.getSheetByName(TAB_TOTALS)) rebuildTotals(ss);
